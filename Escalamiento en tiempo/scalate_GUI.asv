@@ -1,9 +1,15 @@
-
-
-function scalate_GUI()
-
  %lectura del audio 
-[x, fs] = audioread('Audio-Escalamiento.mp3');
+
+ global x;
+ global fs;
+ 
+ [x, fs] = audioread('Audio-Escalamiento.mp3');
+
+ %Llamado de la función princia
+ scalate_UI()
+
+
+function scalate_UI()
        
     %Opciones de escalamiento 
 
@@ -13,17 +19,17 @@ function scalate_GUI()
 
     switch(state)
         case 1
-            subMenu(0.5 , x, fs);
+            subMenu(0.5);
         case 2
-            subMenu(0.8), x, fs;
+            subMenu(0.8);
         case 3
-            subMenu(1, x, fs);
+            subMenu(1);
         case 4
-            subMenu(1.20, x, fs);
+            subMenu(1.20);
         case 5
-            subMenu(1.5,x, fs);
+            subMenu(1.5);
         case 6
-            subMenu(2,x, fs);
+            subMenu(2);
         case 7
 
 
@@ -31,7 +37,7 @@ function scalate_GUI()
 end
 
 
-function subMenu(velocidad, x , fs)
+function subMenu(velocidad)
     state = menu('','Reproducir audio escalado.', 'Volver')
     
     fs_escalada = fs*velocidad; 
@@ -39,7 +45,6 @@ function subMenu(velocidad, x , fs)
     switch(state)
         case 1
             sound(x, fs_escalada);
-            scalate_GUI()
         case 2
             scalate_GUI();
 

@@ -2,8 +2,6 @@
 
 %Ejecución del GUI%
 
-
-
 function GUI_execute()
     msg = "Primer proyecto MATLAB-S&S"
     integrantes = "Felipe Useche-"
@@ -13,16 +11,16 @@ function GUI_execute()
         switch state 
             case 1
                 %actividades_previas();
-                main();
+                
             case 2
                 %EscalamientoConOpciones();
-                main();
+                
             case 3
                 %InversionTiempoV2();
-                main();
+                
             case 4 
                 %impulso();
-                main();
+                
             case 5
                 %impulso
         end
