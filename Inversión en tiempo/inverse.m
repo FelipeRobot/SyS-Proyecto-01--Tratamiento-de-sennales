@@ -21,7 +21,7 @@ end
 function inverse_submenu(audio_index)
 %lectura de audio
 
-audio_path = ["\A-mercedes-ese-de-.mp3", "\Odio-la-luz-azul.mp3"];
+audio_path = ["\A-mercedes-ese-de-.mp3", "\Odio-la-luz-azul.mp3", "\Anita-lava-.mp3"];
 
 [audio, fs] = audioread(audio_path(audio_index)); 
 
