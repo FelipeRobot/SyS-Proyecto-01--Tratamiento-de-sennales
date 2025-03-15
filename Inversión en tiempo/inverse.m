@@ -13,7 +13,7 @@ function inverse()
         case 2
             inverse_submenu(2)
         case 3
-            %inverse_submenu(3)
+            inverse_submenu(3)
     end
 
 end
