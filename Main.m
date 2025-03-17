@@ -8,7 +8,10 @@ function GUI_execute()
 
       state = menu( msg,'Ejecución actividades preparación' ,'Escalamiento', 'Inversión en tiempo','Respuesta impulso' );
     
-        switch state 
+      
+    while true
+
+          switch state 
             case 1
                 %actividades_previas();
                 
@@ -24,4 +27,8 @@ function GUI_execute()
             case 5
                 %impulso
         end
+    
+
+    end
+
 end
