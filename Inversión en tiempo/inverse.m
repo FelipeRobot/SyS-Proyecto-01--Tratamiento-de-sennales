@@ -40,7 +40,7 @@ function inverse_submenu(audio_index)
     msg = 'Elija una opción';
 
     while true
-        state = menu(msg, 'Escuchar audio de referencia', 'Escuchar audio invertido', 'volver'); 
+        state = menu(msg, 'Escuchar audio de referencia', 'Escuchar audio invertido','Gráfica audio','Gráfica audio invertido', 'volver'); 
 
         switch(state)
             case 1
@@ -48,8 +48,24 @@ function inverse_submenu(audio_index)
             case 2
                 sound(audio_invertido, fs);
             case 3
+                generar_grafica(audio, fs);
+            case 4
+                generar_grafica(audio_invertido, fs);
+            case 5
                 break;
         end
     end
 
+end
+
+
+function generar_grafica(signal, fs)
+     figure;
+            hold on;
+            t0 = (0:length(signal)-1) / fs;
+            plot(t0, signal); 
+            xlabel('Tiempo (s)');
+            ylabel('Amplitud');
+            title('Señal de audio - Dominio en el tiempo');
+            hold off;
 end
