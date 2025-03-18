@@ -7,6 +7,8 @@ currentDir = pwd;
 addpath(fullfile(currentDir, 'Escalamiento en tiempo'));
 addpath(fullfile(currentDir, 'Impulso'));
 addpath(fullfile(currentDir, 'Inversión en tiempo'));
+addpath(fullfile(currentDir, 'Respuesta impulso'));
+
 
 % Display current path to verify
 disp('Current MATLAB path:');
@@ -16,7 +18,7 @@ msg = "Primer proyecto MATLAB-S&S";
 integrantes = "Felipe Useche-";
 
 while true
-    state = menu(msg, 'Escalamiento', 'Inversión en tiempo', 'Respuesta impulso','Salir');
+    state = menu(msg, 'Escalamiento', 'Inversión en tiempo', 'Respuesta impulso','Impulso obtenido','Salir');
     
     switch state 
         case 1
@@ -25,7 +27,9 @@ while true
             inverse();
         case 3
             impulso();
-        case 0  % User clicked Cancel
+        case 4
+            impulso_obtenido();
+        case 5  
             break;
     end
 end

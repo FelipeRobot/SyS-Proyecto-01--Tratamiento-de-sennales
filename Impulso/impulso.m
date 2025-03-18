@@ -18,7 +18,7 @@ function impulso()
             [pulse, fs] = audioread(audio_path(state)); 
         end
 
-        user_input = menu(msg2, "Esuchar audio original", "Escuchar respuesta impulso", "volver");
+        user_input = menu(msg2, "Esuchar audio original", "Escuchar respuesta impulso", "Generar gráfica antes de la convolución" ,"Generar gráfica después de la convolución","volver");
 
             switch(user_input)
                 case 1
@@ -26,7 +26,10 @@ function impulso()
                 case 2
                     sound(obtenido, fs);
                 case 3
-                    impulso();
+                    generar_grafica(audio_original, fs);
+                case 4
+                    generar_grafica(resultado, fs);
+                case 5
                     break;
              end
 
@@ -36,3 +39,14 @@ function impulso()
 end
 
 
+
+function generar_grafica(signal, fs)
+     figure;
+            hold on;
+            t0 = (0:length(signal)-1) / fs;
+            plot(t0, signal); 
+            xlabel('Tiempo (s)');
+            ylabel('Amplitud');
+            title('Señal de audio - Dominio en el tiempo');
+            hold off;
+end

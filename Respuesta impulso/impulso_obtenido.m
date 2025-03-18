@@ -5,7 +5,7 @@ function impulso_obtenido()
 
     msg ="Elija una opción";
 
-    resultado = conv(impulso_obtenido(:), audi(:));
+    resultado = conv(impulso(:), audi(:));
 
     while true
         state = menu(msg, 'Escuchar audio original', 'Esuchar respuesta impulso', 'Generar gráfica.', 'volver');
@@ -16,6 +16,7 @@ function impulso_obtenido()
             case 2
                 sound(resultado, fs);
             case 3
+                generar_grafica(resultado, fs);
                     %generar gráfica
             case 4
                 break;
@@ -24,10 +25,10 @@ function impulso_obtenido()
     end
 end
 
-function generar_grafica(signal)
+function generar_grafica(signal, fs)
      figure;
             hold on;
-            t0 = (0:length(signal)-1) / fs2;
+            t0 = (0:length(signal)-1) / fs;
             plot(t0, signal); 
             xlabel('Tiempo (s)');
             ylabel('Amplitud');
