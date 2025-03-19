@@ -14,7 +14,7 @@ addpath(fullfile(currentDir, 'Respuesta impulso'));
 disp('Current MATLAB path:');
 disp(path);
 
-msg = "Primer proyecto MATLAB-S&S";
+msg = "Primer proyecto MATLAB-S&S-Danna Sofía Villa, Daniel Francisco Peña & Felipe Useche";
 integrantes = "Felipe Useche-";
 
 while true
